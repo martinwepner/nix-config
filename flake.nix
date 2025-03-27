@@ -32,10 +32,11 @@
     vscodium-with-extensions = pkgs: pkgs.vscode-with-extensions.override {
       vscode = pkgs.vscodium;
       vscodeExtensions = [
-        # open-vsx-release
-        pkgs.vscode-marketplace.saoudrizwan.claude-dev
-        pkgs.vscode-marketplace.pkief.material-icon-theme
-        pkgs.vscode-marketplace.jnoortheen.nix-ide
+        # open-vsx
+        # vscode-marketplace
+        pkgs.open-vsx.saoudrizwan.claude-dev
+        pkgs.open-vsx.pkief.material-icon-theme
+        pkgs.open-vsx.jnoortheen.nix-ide
       ];
     };
     
