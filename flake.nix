@@ -32,10 +32,10 @@
     vscodium-with-extensions = pkgs: pkgs.vscode-with-extensions.override {
       vscode = pkgs.vscodium;
       vscodeExtensions = [
+        # open-vsx-release
         pkgs.vscode-marketplace.saoudrizwan.claude-dev
         pkgs.vscode-marketplace.pkief.material-icon-theme
         pkgs.vscode-marketplace.jnoortheen.nix-ide
-        pkgs.vscode-marketplace.rooveterinaryinc.roo-cline
       ];
     };
     
@@ -70,6 +70,7 @@
           pkgs.oh-my-posh
           pkgs.warp-terminal
           pkgs.gh
+          pkgs.curl
         ];
       };
 
@@ -79,6 +80,7 @@
         casks = [
           # "affine"
           "nvidia-geforce-now"
+          "lm-studio"
         ];
         masApps = {
           "Tailscale" = 1475387142;
