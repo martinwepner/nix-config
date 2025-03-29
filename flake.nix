@@ -63,15 +63,16 @@
 
       environment = {
         systemPackages = [
-          pkgs.mkalias # to create aliases and find applications using cmd+space
-
-          pkgs.mas
           (vscodium-with-extensions pkgs) # VSCodium with extensions
+
+          pkgs.mkalias
+          pkgs.mas
           pkgs.istatmenus
           pkgs.oh-my-posh
           pkgs.warp-terminal
           pkgs.gh
           pkgs.curl
+          pkgs.python312
         ];
       };
 
@@ -82,6 +83,7 @@
           # "affine"
           "nvidia-geforce-now"
           "lm-studio"
+          "crossover"
         ];
         masApps = {
           "Tailscale" = 1475387142;
