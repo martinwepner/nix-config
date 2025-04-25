@@ -34,7 +34,7 @@
       vscodeExtensions = [
         # open-vsx
         # vscode-marketplace
-        pkgs.open-vsx.saoudrizwan.claude-dev
+        pkgs.vscode-marketplace.saoudrizwan.claude-dev
         pkgs.open-vsx.pkief.material-icon-theme
         pkgs.open-vsx.jnoortheen.nix-ide
       ];
@@ -70,6 +70,7 @@
           pkgs.istatmenus
           pkgs.oh-my-posh
           pkgs.warp-terminal
+
           pkgs.gh
           pkgs.curl
           pkgs.python312
@@ -84,6 +85,7 @@
           "nvidia-geforce-now"
           "lm-studio"
           "crossover"
+          "docker"
         ];
         masApps = {
           "Tailscale" = 1475387142;
@@ -101,10 +103,6 @@
           pkgs.nerd-fonts.jetbrains-mono
         ];
       };
-
-      environment.shellInit = ''
-        eval "$(oh-my-posh init asd)"
-      '';
 
       system = {
         # Used for backwards compatibility, please read the changelog before changing.
