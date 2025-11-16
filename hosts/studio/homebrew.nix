@@ -8,6 +8,7 @@
       "docker-desktop"
       "codex"
       "claude-code"
+      "chatgpt"
     ];
     masApps = {
       "Amphetamine" = 937984704;
