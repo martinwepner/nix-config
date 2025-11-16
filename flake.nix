@@ -4,7 +4,7 @@
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
-    nix-darwin.url = "github:LnL7/nix-darwin/master";
+    nix-darwin.url = "github:nix-darwin/nix-darwin/master";
     nix-darwin.inputs.nixpkgs.follows = "nixpkgs";
 
     # VSCode Extensions
@@ -67,9 +67,7 @@
 
           pkgs.mkalias
           pkgs.mas
-          pkgs.istatmenus
           pkgs.oh-my-posh
-          pkgs.warp-terminal
 
           pkgs.gh
           pkgs.curl
@@ -79,13 +77,17 @@
 
       homebrew = {
         enable = true;
-        brews = [];
+        brews = [
+        ];
         casks = [
           # "affine"
           "nvidia-geforce-now"
           "lm-studio"
           "crossover"
-          "docker"
+          "docker-desktop"
+          "istat-menus"
+          "warp"
+          "codex"
         ];
         masApps = {
           "Tailscale" = 1475387142;
@@ -109,6 +111,7 @@
         # $ darwin-rebuild changelog
         stateVersion = 6;
         configurationRevision = self.rev or self.dirtyRev or null;
+        primaryUser = "martinwepner";
 
         defaults = {
           loginwindow.GuestEnabled = false;
@@ -133,7 +136,6 @@
             persistent-apps = [
               "/Applications/Safari.app"
               # "/System/Applications/Utilities/Terminal.app"
-              "${pkgs.warp-terminal}/Applications/Warp.app"
               "${(vscodium-with-extensions pkgs)}/Applications/VSCodium.app"
             ];
             persistent-others = [
@@ -147,7 +149,7 @@
           env = pkgs.buildEnv {
             name = "system-applications";
             paths = config.environment.systemPackages;
-            pathsToLink = "/Applications";
+            pathsToLink = [ "/Applications" ];
           };
         in
           pkgs.lib.mkForce ''

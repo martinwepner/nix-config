@@ -1,1 +1,1 @@
-darwin-rebuild switch --flake .#studio
+sudo darwin-rebuild switch --flake .#studio
