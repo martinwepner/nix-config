@@ -1,7 +1,7 @@
 { inputs, self }:
 path:
 let
-  inherit (inputs) nix-darwin nix-homebrew homebrew-core homebrew-cask homebrew-bundle;
+  inherit (inputs) nix-darwin nix-homebrew homebrew-core homebrew-cask;
 in
 nix-darwin.lib.darwinSystem {
   modules = [
@@ -15,7 +15,6 @@ nix-darwin.lib.darwinSystem {
         taps = {
           "homebrew/core" = homebrew-core;
           "homebrew/cask" = homebrew-cask;
-          "homebrew/bundle" = homebrew-bundle;
         };
         mutableTaps = false;
       };

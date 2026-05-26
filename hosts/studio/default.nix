@@ -5,7 +5,6 @@
     ./dock.nix
     ./homebrew.nix
     ./packages.nix
-    ./vscodium.nix
   ];
 
   networking.hostName = "studio";

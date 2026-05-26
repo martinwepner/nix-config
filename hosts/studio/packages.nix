@@ -3,5 +3,6 @@
   environment.systemPackages = lib.mkAfter [
     pkgs.curl
     pkgs.python312
+    pkgs.runpodctl
   ];
 }

@@ -5,6 +5,13 @@
   ];
 
   system.defaults.dock.persistent-others = [
-    "/Users/martinwepner/Downloads"
+    {
+      folder = {
+        path = "/Users/martinwepner/Downloads";
+        arrangement = "date-added";
+        displayas = "stack";
+        showas = "automatic";
+      };
+    }
   ];
 }
